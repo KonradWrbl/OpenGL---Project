@@ -22,6 +22,7 @@
     <ClCompile Include="Cuboid.cpp" />
     <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="Gl_template.cpp" />
+    <ClCompile Include="Rover.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="Terrain.cpp" />
   </ItemGroup>
@@ -32,6 +33,7 @@
     <ClInclude Include="Cuboid.h" />
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="RESOURCE.H" />
+    <ClInclude Include="Rover.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="Terrain.h" />
   </ItemGroup>
@@ -118,7 +120,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>

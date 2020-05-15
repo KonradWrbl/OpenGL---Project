@@ -6,6 +6,10 @@
 #include <stdio.h>
 #include "RESOURCE.H"
 
+Cylinder::Cylinder() {
+
+}
+
 Cylinder::Cylinder(double r, double h)
 {
 	this->setRadius(r);
@@ -28,20 +32,20 @@ void Cylinder::draw(double x, double y, double z, double rotA, double rotX, doub
 	glTranslatef(x, y, z);
 	glRotated(rotA, rotX, rotY, rotZ);
 	glBegin(GL_TRIANGLE_FAN);
-	glColor3d(1, 0, 0);
+	//glColor3d(1, 0, 0);
 	glVertex3d(0, 0, -h * 0.5);
 	for (alpha = 0; alpha <= 2 * PI; alpha += PI / 20)
 	{
 		x = r * sin(alpha);
 		y = r * cos(alpha);
-		glColor3d(0, 1, 0);
+		//glColor3d(0, 1, 0);
 		glVertex3d(x, y, -h * 0.5);
 	}
 	glEnd();
 
 	glBegin(GL_TRIANGLE_STRIP);
 	for (int i = 0; i < 10; i++) {
-		glColor3d(0, 1 - i * 0.1, i * 0.1);
+		//glColor3d(0, 1 - i * 0.1, i * 0.1);
 		for (alpha = 0.0; alpha <= 2 * PI; alpha += PI / 20) {
 			x = r * sin(alpha);
 			y = r * cos(alpha);
@@ -52,13 +56,13 @@ void Cylinder::draw(double x, double y, double z, double rotA, double rotX, doub
 	glEnd();
 
 	glBegin(GL_TRIANGLE_FAN);
-	glColor3d(1, 0, 0);
+	//glColor3d(1, 0, 0);
 	glVertex3d(0, 0, 0.5 * h);
 	for (alpha = 0; alpha >= -2 * PI; alpha -= PI / 20)
 	{
 		x = r * sin(alpha);
 		y = r * cos(alpha);
-		glColor3d(0, 0, 1);
+		//glColor3d(0, 0, 1);
 		glVertex3d(x, y, 0.5 * h);
 	}
 	glEnd();

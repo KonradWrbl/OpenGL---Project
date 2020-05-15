@@ -25,7 +25,7 @@
 #include "Cylinder.h"
 #include "Sphere.h"
 #include "Terrain.h"
-
+#include "Rover.h"
 
 
 
@@ -94,24 +94,9 @@ void RenderScene(void) {
 	Terrain terr(1000, 1000);
 	
 	glScalef(.1, .1, .1);
+	Rover rover;
+	rover.draw();
 
-	Cuboid block1(100, 30, 50) ;
-	Cuboid block2(60, 30, 50);
-	Cuboid block3(60, 10, 10);
-	block1.draw(0, 0, 0);
-	block2.draw(0, 30, 0);
-	block3.draw(100, 30, 22.5);
-	Cylinder wheel1(20, 10);
-	Cylinder wheel2(20, 10);
-	Cylinder wheel3(20, 10);
-	Cylinder wheel4(20, 10);
-	wheel1.draw(0, 0, 0);
-	wheel2.draw(0, 0, 50);
-	wheel3.draw(100, 0, 0);
-	wheel4.draw(0, 0, -50);
-
-	Sphere sph(20);
-	sph.draw(0, 40, 25);
 	//////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////
 	//////// To jest scena, w której coœ rysujesz ////////

@@ -2,6 +2,7 @@
 class Cylinder
 {
 public:
+	Cylinder();
 	Cylinder(double, double);
 	double getRadius();
 	double getHeight();

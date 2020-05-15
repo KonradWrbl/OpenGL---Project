@@ -2,6 +2,7 @@
 class Cuboid
 {
 public:
+	Cuboid();
 	Cuboid(double, double, double);
 	double getWidth();
 	double getDepth();

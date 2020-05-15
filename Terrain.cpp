@@ -28,6 +28,7 @@ void Terrain::draw()
     glTranslatef(0, -60, 0);
     glRotated(90, 1, 0, 0);
     glScalef(.1, .1, .1);
+    glColor3d(0.850, 0.705, 0.627);
     for (alpha = 0.0; alpha < PI; alpha += PI / gradation)
     {
         glBegin(GL_TRIANGLE_STRIP);
