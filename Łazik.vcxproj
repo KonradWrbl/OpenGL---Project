@@ -23,6 +23,7 @@
     <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="Gl_template.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="Terrain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="RESOURCE.APS" />
@@ -32,6 +33,7 @@
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="RESOURCE.H" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="Terrain.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

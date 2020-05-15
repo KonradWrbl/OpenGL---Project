@@ -24,6 +24,8 @@
 #include "Cuboid.h"
 #include "Cylinder.h"
 #include "Sphere.h"
+#include "Terrain.h"
+
 
 
 
@@ -89,7 +91,10 @@ void RenderScene(void) {
 	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
 
-	glScalef(.5, .5, .5);
+	Terrain terr(1000, 1000);
+	
+	glScalef(.1, .1, .1);
+
 	Cuboid block1(100, 30, 50) ;
 	Cuboid block2(60, 30, 50);
 	Cuboid block3(60, 10, 10);
@@ -105,8 +110,6 @@ void RenderScene(void) {
 	wheel3.draw(100, 0, 0);
 	wheel4.draw(0, 0, -50);
 
-	
-
 	Sphere sph(20);
 	sph.draw(0, 40, 25);
 	//////////////////////////////////////////////////////
@@ -114,6 +117,8 @@ void RenderScene(void) {
 	//////// To jest scena, w której coœ rysujesz ////////
 	//////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////
+
+	terr.draw();
 
 	glPopMatrix();
 	glMatrixMode(GL_MODELVIEW);
