@@ -6,7 +6,7 @@ public:
 	double getWidth();
 	double getDepth();
 	double getHeight();
-	void draw(double, double, double);
+	void draw(double, double, double, double = 0, double = 0, double = 0, double = 0);
 private:
 	double width, depth, height;
 	void setWidth(double);

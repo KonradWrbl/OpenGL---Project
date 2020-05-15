@@ -23,6 +23,7 @@
 #include "RESOURCE.H"
 #include "Cuboid.h"
 #include "Cylinder.h"
+#include "Sphere.h"
 
 
 
@@ -88,11 +89,26 @@ void RenderScene(void) {
 	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
 
-	Cuboid cube(10, 10, 10) ;
-	//cube.draw(0, 0, 0);
+	glScalef(.5, .5, .5);
+	Cuboid block1(100, 30, 50) ;
+	Cuboid block2(60, 30, 50);
+	Cuboid block3(60, 10, 10);
+	block1.draw(0, 0, 0);
+	block2.draw(0, 30, 0);
+	block3.draw(100, 30, 22.5);
+	Cylinder wheel1(20, 10);
+	Cylinder wheel2(20, 10);
+	Cylinder wheel3(20, 10);
+	Cylinder wheel4(20, 10);
+	wheel1.draw(0, 0, 0);
+	wheel2.draw(0, 0, 50);
+	wheel3.draw(100, 0, 0);
+	wheel4.draw(0, 0, -50);
 
-	Cylinder cyl(10, 100);
-	cyl.draw(0, 0, 0, 0, 0, 0);
+	
+
+	Sphere sph(20);
+	sph.draw(0, 40, 25);
 	//////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////
 	//////// To jest scena, w której coœ rysujesz ////////

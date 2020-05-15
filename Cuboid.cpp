@@ -29,11 +29,12 @@ double Cuboid::getHeight()
 	return this->height;
 }
 
-void Cuboid::draw(double x, double y, double z)
+void Cuboid::draw(double x, double y, double z, double rotA, double rotX, double rotY, double rotZ)
 {
 	width = this->getWidth();
 	height = this->getHeight();
 	depth = this->getDepth();
+	glRotated(rotA, rotX, rotY, rotZ);
 	glBegin(GL_TRIANGLE_STRIP);
 	glColor3d(1, 0, 0);
 	glVertex3d(x, y, z);

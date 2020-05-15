@@ -22,10 +22,11 @@ double Cylinder::getHeight()
 	return this->height;
 }
 
-void Cylinder::draw(double x, double y, double z, double rotX, double rotY, double rotZ)
+void Cylinder::draw(double x, double y, double z, double rotA, double rotX, double rotY, double rotZ)
 {
 	double alpha, PI = 3.14, h = this->getHeight(), r = this->getRadius();
-
+	glTranslatef(x, y, z);
+	glRotated(rotA, rotX, rotY, rotZ);
 	glBegin(GL_TRIANGLE_FAN);
 	glColor3d(1, 0, 0);
 	glVertex3d(0, 0, -h * 0.5);
