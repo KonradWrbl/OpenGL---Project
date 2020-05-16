@@ -23,9 +23,7 @@ Rover::Rover() {
 	antenna = new Cone(40, 40);
 }
 
-Rover::~Rover() {
-
-}
+Rover::~Rover() {}
 
 void Rover::draw() {
 	glColor3d(0.2, 0.2, 0.2);

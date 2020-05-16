@@ -14,9 +14,7 @@ Rocket::Rocket() {
 	leg2 = new Cuboid(15, 70, 30);
 }
 
-Rocket::~Rocket() {
-
-}
+Rocket::~Rocket() {}
 
 void Rocket::draw() {
 	glColor3d(0.713, 0.168, 0.086);

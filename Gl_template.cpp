@@ -80,7 +80,7 @@ void SetupRC() {
 	glMateriali(GL_FRONT, GL_SHININESS, 128);
 
 	glEnable(GL_DEPTH_TEST);
-	glClearColor(0.094, 0.050, 0.027, 1.0f);
+	glClearColor(0.094f, 0.050f, 0.027f, 1.0f);
 }
 
 void RenderScene(void) {
@@ -89,13 +89,12 @@ void RenderScene(void) {
 	glPushMatrix();
 	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
-
-	glScalef(.2, .2, .2);
-	Terrain terr(1000, 1000);
+	glScalef(.2f, .2f, .2f);
 	
 	Rover rover;
 	rover.draw();
 
+	Terrain terr(1000, 1000);
 	terr.draw();
 
 	Rocket rocket;
