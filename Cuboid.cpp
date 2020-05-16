@@ -37,7 +37,9 @@ void Cuboid::draw(double x, double y, double z, double rotA, double rotX, double
 	height = this->getHeight();
 	depth = this->getDepth();
 
+	glPushMatrix();
 	glRotated(rotA, rotX, rotY, rotZ);
+	
 	glBegin(GL_TRIANGLE_STRIP);
 	//glColor3d(1, 0, 0);
 	glVertex3d(x, y, z);
@@ -55,6 +57,7 @@ void Cuboid::draw(double x, double y, double z, double rotA, double rotX, double
 	glVertex3d(x, y, z);
 	glVertex3d(x, y + height, z);
 	glEnd();
+	glPopMatrix();
 }
 
 void Cuboid::setWidth(double w)

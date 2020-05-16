@@ -26,7 +26,7 @@
 #include "Sphere.h"
 #include "Terrain.h"
 #include "Rover.h"
-
+#include "Rocket.h"
 
 
 static LPCTSTR lpszAppName = "£azik - Grafika Komputerowa";
@@ -58,15 +58,11 @@ void ChangeSize(GLsizei w, GLsizei h) {
 }
 
 void SetupRC() {
-	GLfloat  ambientLight[] = { 0.3f, 0.3f, 0.3f, 1.0f };
-	GLfloat  diffuseLight[] = { 1, 1, 1, 1 };
+	GLfloat  ambientLight[] = { 0.3f, 0.3f, 0.3f, 0.2f };
+	GLfloat  diffuseLight[] = { 0.2f, 0.2f, 0.2f, 0.4f };
 	GLfloat  specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-	GLfloat	 lightPos[] = { 50, 50, 0, 50 };
-	//GLfloat	 lightPos2[] = { 0, 100, 0, 1 };
-	GLfloat  specref[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-	glEnable(GL_DEPTH_TEST);
-	glFrontFace(GL_CCW);
+	GLfloat	 lightPos[] = { -100, -100, -30, -100 };
+	GLfloat  specref[] = { 1.0f, 1.0f, 1.0f, 0.0f };
 
 	glEnable(GL_LIGHTING);
 
@@ -74,14 +70,7 @@ void SetupRC() {
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuseLight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-
-	//glLightfv(GL_LIGHT1, GL_AMBIENT, ambientLight);
-	//glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuseLight);
-	//glLightfv(GL_LIGHT1, GL_SPECULAR, specular);
-	//glLightfv(GL_LIGHT1, GL_POSITION, lightPos2);
-
 	glEnable(GL_LIGHT0);
-	//glEnable(GL_LIGHT1);
 
 	glEnable(GL_COLOR_MATERIAL);
 
@@ -89,7 +78,8 @@ void SetupRC() {
 	glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
 	glMateriali(GL_FRONT, GL_SHININESS, 128);
 
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glEnable(GL_DEPTH_TEST);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
 void RenderScene(void) {
@@ -104,6 +94,9 @@ void RenderScene(void) {
 	glScalef(.1, .1, .1);
 	Rover rover;
 	rover.draw();
+
+	Rocket rocket;
+	//rocket.draw();
 
 	//////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////

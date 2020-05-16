@@ -38,10 +38,11 @@ void Cone::setHeight(double h)
 void Cone::draw(double x, double y, double z, double rotA, double rotX, double rotY, double rotZ)
 {
 	double alpha, PI = 3.14, h = this->getHeight(), r = this->getRadius();
-	glTranslatef(x, y, z);
 	
-	glRotated(rotA, rotX, rotY, rotZ);
+	glTranslatef(x, y, z);
 	glPushMatrix();
+	glRotated(rotA, rotX, rotY, rotZ);
+	
 	glBegin(GL_TRIANGLE_FAN);
 	
 	glVertex3f(0, 0, h);

@@ -25,7 +25,7 @@ double Terrain::getY()
 void Terrain::draw()
 {
     double PI = 3.141593, alpha, beta, radius = 10000, gradation = 20, x, y, z;
-    glTranslatef(0, -110, 0);
+    glTranslatef(0, -100, 0);
     glRotated(90, 1, 0, 0);
     glScalef(.1, .1, .1);
     glColor3d(0.850, 0.705, 0.627);

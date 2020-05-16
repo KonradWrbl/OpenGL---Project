@@ -29,7 +29,9 @@ double Cylinder::getHeight()
 void Cylinder::draw(double x, double y, double z, double rotA, double rotX, double rotY, double rotZ)
 {
 	double alpha, PI = 3.14, h = this->getHeight(), r = this->getRadius();
+	
 	glTranslatef(x, y, z);
+	glPushMatrix();
 	glRotated(rotA, rotX, rotY, rotZ);
 	glBegin(GL_TRIANGLE_FAN);
 	//glColor3d(1, 0, 0);
@@ -66,6 +68,7 @@ void Cylinder::draw(double x, double y, double z, double rotA, double rotX, doub
 		glVertex3d(x, y, 0.5 * h);
 	}
 	glEnd();
+	glPopMatrix();
 }
 
 

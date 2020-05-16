@@ -45,6 +45,6 @@ void Rover::draw() {
 	glColor3d(0.941, 0.866, 0.098);
 	sphere->draw(0, 30, 25);
 
-	glColor3d(1, 1, 1);
-	antenna->draw(-100, 80, -50, 1, 90, 90, 0);
+	glColor3d(0.8, 0.8, 0.8);
+	antenna->draw(-100, 80, -50, 1, 0, 45, 0);
 }
