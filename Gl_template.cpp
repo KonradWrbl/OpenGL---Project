@@ -30,7 +30,7 @@
 
 
 static LPCTSTR lpszAppName = "£azik - Grafika Komputerowa";
-float xRot, yRot;
+float xRot = 20, yRot;
 
 void ChangeSize(GLsizei w, GLsizei h) {
 	GLfloat nRange = 100.0f;
@@ -58,11 +58,12 @@ void ChangeSize(GLsizei w, GLsizei h) {
 }
 
 void SetupRC() {
-	GLfloat  ambientLight[] = { 0.3f, 0.3f, 0.3f, 0.2f };
-	GLfloat  diffuseLight[] = { 0.2f, 0.2f, 0.2f, 0.4f };
+	glEnable(GL_NORMALIZE);
+	GLfloat  ambientLight[] = { 0.3f, 0.3f, 0.3f, 1.0f };
+	GLfloat  diffuseLight[] = { 1, 1, 1, 1 };
 	GLfloat  specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-	GLfloat	 lightPos[] = { -100, -100, -30, -100 };
-	GLfloat  specref[] = { 1.0f, 1.0f, 1.0f, 0.0f };
+	GLfloat	 lightPos[] = { 0, 0, 500, 1 };
+	GLfloat  specref[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	glEnable(GL_LIGHTING);
 
@@ -79,7 +80,7 @@ void SetupRC() {
 	glMateriali(GL_FRONT, GL_SHININESS, 128);
 
 	glEnable(GL_DEPTH_TEST);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClearColor(0.094, 0.050, 0.027, 1.0f);
 }
 
 void RenderScene(void) {
@@ -89,22 +90,16 @@ void RenderScene(void) {
 	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
 
+	glScalef(.2, .2, .2);
 	Terrain terr(1000, 1000);
 	
-	glScalef(.1, .1, .1);
 	Rover rover;
 	rover.draw();
 
-	Rocket rocket;
-	//rocket.draw();
-
-	//////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////
-	//////// To jest scena, w której coœ rysujesz ////////
-	//////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////
-
 	terr.draw();
+
+	Rocket rocket;
+	rocket.draw();
 
 	glPopMatrix();
 	glMatrixMode(GL_MODELVIEW);
@@ -212,7 +207,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		lpszAppName,
 		WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
 		50, 50,
-		400, 400,
+		800, 800,
 		NULL,
 		NULL,
 		hInstance,

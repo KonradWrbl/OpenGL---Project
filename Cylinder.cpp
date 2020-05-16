@@ -29,7 +29,7 @@ double Cylinder::getHeight()
 void Cylinder::draw(double x, double y, double z, double rotA, double rotX, double rotY, double rotZ)
 {
 	double alpha, PI = 3.14, h = this->getHeight(), r = this->getRadius();
-	
+
 	glTranslatef(x, y, z);
 	glPushMatrix();
 	glRotated(rotA, rotX, rotY, rotZ);

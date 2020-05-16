@@ -1,6 +1,7 @@
 #pragma once
 #include "Cylinder.h";
 #include "Cone.h";
+#include "Cuboid.h"
 
 class Rocket
 {
@@ -9,6 +10,8 @@ public:
 	~Rocket();
 
 	Cylinder* body;
+	Cuboid* leg1;
+	Cuboid* leg2;
 
 	Cone* cone;
 

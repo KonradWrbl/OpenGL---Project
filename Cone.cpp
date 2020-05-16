@@ -39,24 +39,23 @@ void Cone::draw(double x, double y, double z, double rotA, double rotX, double r
 {
 	double alpha, PI = 3.14, h = this->getHeight(), r = this->getRadius();
 	
+	
 	glTranslatef(x, y, z);
 	glPushMatrix();
 	glRotated(rotA, rotX, rotY, rotZ);
-	
 	glBegin(GL_TRIANGLE_FAN);
-	
 	glVertex3f(0, 0, h);
 	for (int angle = 0; angle < 360; angle++) {
 		glVertex3f(sin(angle) * r, cos(angle) * r, 0);
 	}
 	glEnd();
 
-	// draw the base of the cone
+	//base of the cone
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(0, 0, 0);
 	for (int angle = 0; angle < 360; angle++) {
-		// normal is just pointing down
 		glNormal3f(0, -1, 0);
+		glColor3d(0.9, 0.9, 0.9);
 		glVertex3f(sin(angle) * r, cos(angle) * r, 0);
 	}
 	glEnd();

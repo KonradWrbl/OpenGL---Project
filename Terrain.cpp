@@ -8,24 +8,25 @@
 
 Terrain::Terrain(double x, double y)
 {
-	setX(x);
-	setY(y);
+    setX(x);
+    setY(y);
 }
 
 double Terrain::getX()
 {
-	return this->x;
+    return this->x;
 }
 
 double Terrain::getY()
 {
-	return this->y;
+    return this->y;
 }
 
 void Terrain::draw()
 {
     double PI = 3.141593, alpha, beta, radius = 10000, gradation = 20, x, y, z;
-    glTranslatef(0, -100, 0);
+    glTranslatef(0, -160, 0);
+    glPushMatrix();
     glRotated(90, 1, 0, 0);
     glScalef(.1, .1, .1);
     glColor3d(0.850, 0.705, 0.627);
@@ -37,22 +38,23 @@ void Terrain::draw()
             x = radius * cos(beta);
             y = radius * sin(beta);
             z = radius * cos(x) * sin(y);
-            glVertex3f(x, y, z/10);
+            glVertex3f(x, y, z / 10);
             x = radius * cos(beta) * sin(alpha + PI / gradation);
             y = radius * sin(beta) * sin(alpha + PI / gradation);
             z = radius * cos(x + PI / gradation) * sin(y + PI / gradation);
-            glVertex3f(x, y, z/10);
+            glVertex3f(x, y, z / 10);
         }
         glEnd();
     }
+    glPopMatrix();
 }
 
 void Terrain::setX(double x)
 {
-	this->x = x;
+    this->x = x;
 }
 
 void Terrain::setY(double y)
 {
-	this->y = y;
+    this->y = y;
 }

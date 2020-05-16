@@ -16,11 +16,11 @@ Rover::Rover() {
 	block1 = new Cuboid(100, 30, 50);
 	block2 = new Cuboid(60, 30, 50);
 	block3 = new Cuboid(60, 10, 10);
-	block4 = new Cuboid(10, 60, 10);
+	block4 = new Cuboid(5, 60, 5);
 
 	sphere = new Sphere(20);
 
-	antenna = new Cone(50, 50);
+	antenna = new Cone(40, 40);
 }
 
 Rover::~Rover() {
@@ -33,7 +33,7 @@ void Rover::draw() {
 	wheel2->draw(0, 0, 50);
 	wheel3->draw(100, 0, 0);
 	wheel4->draw(0, 0, -50);
-	
+
 	glColor3d(0.321, 0.101, 0.6);
 	block1->draw(-100, 0, 0);
 	glColor3d(0.321, 0.101, 0.6);
@@ -46,5 +46,5 @@ void Rover::draw() {
 	sphere->draw(0, 30, 25);
 
 	glColor3d(0.8, 0.8, 0.8);
-	antenna->draw(-100, 80, -50, 1, 0, 45, 0);
+	antenna->draw(-100, 110, -35, 35, 1, 0, 0);
 }
