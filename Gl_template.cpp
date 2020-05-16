@@ -61,7 +61,8 @@ void SetupRC() {
 	GLfloat  ambientLight[] = { 0.3f, 0.3f, 0.3f, 1.0f };
 	GLfloat  diffuseLight[] = { 1, 1, 1, 1 };
 	GLfloat  specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-	GLfloat	 lightPos[] = { 0, 50, 0, 1 };
+	GLfloat	 lightPos[] = { 50, 50, 0, 50 };
+	//GLfloat	 lightPos2[] = { 0, 100, 0, 1 };
 	GLfloat  specref[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	glEnable(GL_DEPTH_TEST);
@@ -73,7 +74,14 @@ void SetupRC() {
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuseLight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
+
+	//glLightfv(GL_LIGHT1, GL_AMBIENT, ambientLight);
+	//glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuseLight);
+	//glLightfv(GL_LIGHT1, GL_SPECULAR, specular);
+	//glLightfv(GL_LIGHT1, GL_POSITION, lightPos2);
+
 	glEnable(GL_LIGHT0);
+	//glEnable(GL_LIGHT1);
 
 	glEnable(GL_COLOR_MATERIAL);
 

@@ -36,6 +36,7 @@ void Cuboid::draw(double x, double y, double z, double rotA, double rotX, double
 	width = this->getWidth();
 	height = this->getHeight();
 	depth = this->getDepth();
+
 	glRotated(rotA, rotX, rotY, rotZ);
 	glBegin(GL_TRIANGLE_STRIP);
 	//glColor3d(1, 0, 0);

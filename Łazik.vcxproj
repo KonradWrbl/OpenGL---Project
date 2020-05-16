@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cone.cpp" />
     <ClCompile Include="Cuboid.cpp" />
     <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="Gl_template.cpp" />
@@ -30,6 +31,7 @@
     <None Include="RESOURCE.APS" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cone.h" />
     <ClInclude Include="Cuboid.h" />
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="RESOURCE.H" />

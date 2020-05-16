@@ -2,6 +2,7 @@
 #include "Cylinder.h";
 #include "Cuboid.h";
 #include "Sphere.h";
+#include "Cone.h";
 
 class Rover
 {
@@ -17,8 +18,11 @@ public:
 	Cuboid *block1;
 	Cuboid *block2;
 	Cuboid *block3;
+	Cuboid* block4;
 
 	Sphere *sphere;
+
+	Cone* antenna;
 
 	void draw();
 };	
